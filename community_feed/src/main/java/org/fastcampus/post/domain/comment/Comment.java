@@ -46,10 +46,18 @@ public class Comment {
     }
 
     public void updateComment(User user, String updateContent) {
-        if (this.author.equals(user)) {
+        if (!this.author.equals(user)) {
             throw new IllegalArgumentException();
         }
 
         this.content.updateContent(updateContent);
+    }
+
+    public int getLikeCount() {
+        return likeCounter.getCount();
+    }
+
+    public String getContent() {
+        return content.getContentText();
     }
 }

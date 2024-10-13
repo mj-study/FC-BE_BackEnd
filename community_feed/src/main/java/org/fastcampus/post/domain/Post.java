@@ -38,11 +38,19 @@ public class Post {
     }
 
     public void updatePost(User user, String updateContent, PostPublicationState state) {
-        if (this.author.equals(user)) {
+        if (!this.author.equals(user)) {
             throw new IllegalArgumentException();
         }
 
         this.state = state;
         this.content.updateContent(updateContent);
+    }
+
+    public int getLikeCount() {
+        return likeCounter.getCount();
+    }
+
+    public String getContent() {
+        return content.getContentText();
     }
 }
