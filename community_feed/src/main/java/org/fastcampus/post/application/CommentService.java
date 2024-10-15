@@ -64,6 +64,5 @@ public class CommentService {
             comment.unLike(user);
             likeRepository.unLike(comment, user);
         }
-
     }
 }
