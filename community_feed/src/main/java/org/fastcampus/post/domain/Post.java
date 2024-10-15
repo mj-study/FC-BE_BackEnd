@@ -1,6 +1,7 @@
 package org.fastcampus.post.domain;
 
 import org.fastcampus.common.domain.PositiveIntegerCounter;
+import org.fastcampus.post.domain.content.Content;
 import org.fastcampus.post.domain.content.PostContent;
 import org.fastcampus.post.domain.content.PostPublicationState;
 import org.fastcampus.user.domain.User;
@@ -65,5 +66,17 @@ public class Post {
 
     public String getContent() {
         return content.getContentText();
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public User getAuthor() {
+        return author;
+    }
+
+    public PostContent getContentObject() {
+        return content;
     }
 }
