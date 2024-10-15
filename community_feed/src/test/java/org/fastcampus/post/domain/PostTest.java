@@ -36,7 +36,7 @@ class PostTest {
     void givenPostLikedAndUnliked_whenCheckLikeCount_thenShouldBe0() {
         // given
         post.like(otherUser);
-        post.unLike(otherUser);
+        post.unLike();
         // then
         assertEquals(0, post.getLikeCount());
     }
