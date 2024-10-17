@@ -5,6 +5,7 @@ import org.fastcampus.user.application.interfaces.UserRepository;
 import org.fastcampus.user.domain.User;
 import org.fastcampus.user.domain.UserInfo;
 
+//@Service
 public class UserService {
 
     private final UserRepository userRepository;
