@@ -22,8 +22,7 @@ public class PostApplicationTestTemplate {
 
     final CreatePostRequestDto postRequestDto = new CreatePostRequestDto(user.getId(), "테스트 post",
         PostPublicationState.PUBLIC);
-    final UpdatePostRequestDto postUpdateDto = new UpdatePostRequestDto(1L, user.getId(),
-        "수정합니다요",
+    final UpdatePostRequestDto postUpdateDto = new UpdatePostRequestDto(user.getId(), "수정합니다요",
         PostPublicationState.PRIVATE);
     final Post post = postService.createPost(postRequestDto);
 
