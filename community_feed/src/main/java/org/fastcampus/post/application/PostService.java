@@ -45,7 +45,7 @@ public class PostService {
     public void likePost(LikeRequestDto dto) {
         Post post = getPost(dto.targetId());
         User user = userService.getUser(dto.userId());
-
+        
         if (likeRepository.checkLike(post, user)) {
             return;
         }
