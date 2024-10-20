@@ -6,6 +6,7 @@ import org.fastcampus.post.application.interfaces.PostRepository;
 import org.fastcampus.post.domain.Post;
 import org.fastcampus.post.repository.entity.post.PostEntity;
 import org.fastcampus.post.repository.jpa.JpaPostRepository;
+import org.fastcampus.post.repository.post_queue.UserPostQueueCommandRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Repository;
 public class PostRepositoryImpl implements PostRepository {
 
     private final JpaPostRepository postRepository;
+    private final UserPostQueueCommandRepository commandRepository;
 
     @Override
     @Transactional
@@ -23,6 +25,7 @@ public class PostRepositoryImpl implements PostRepository {
             return entity.toPost();
         }
         entity = postRepository.save(entity);
+        commandRepository.publishPost(entity);
         return entity.toPost();
     }
 
