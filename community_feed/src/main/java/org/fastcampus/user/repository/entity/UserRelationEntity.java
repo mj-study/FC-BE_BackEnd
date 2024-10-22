@@ -18,9 +18,9 @@ import org.fastcampus.common.repository.entity.TimeBaseEntity;
 public class UserRelationEntity extends TimeBaseEntity {
 
     @Id
-    private Long followingUserId;
-
-    @Id
     private Long followerUserId;
+    
+    @Id
+    private Long followingUserId;
 
 }
